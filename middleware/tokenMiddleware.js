@@ -5,7 +5,7 @@ require('dotenv').config();
 
 module.exports = (req, res, next) => {
     try{
-        const authHeader = req.header('authorization');
+        const authHeader = req.headers['authorization'];
         const token = authHeader && authHeader.split(" ")[1];
         if(token == null){
             return res.status(400).json({
@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
         jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
             if(err){
                 return res.status(400).json({
-                    message: 'Error'
+                    message: 'Incorrect Token'
                 });
             }
             req.user = user;

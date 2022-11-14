@@ -7,7 +7,7 @@ const tokenAuth = require('../middleware/tokenMiddleware');
 
 const router = express.Router();
 
-router.post('/addAdmin', tokenAuth, adminController.addAdmin);
+router.post('/addAdmin', adminController.addAdmin);
 router.post('/login', adminController.login);
 router.get('/errandSenderTrue', tokenAuth, adminController.getErrandSenderTrue);
 router.get('/errandSenderFalse', tokenAuth, adminController.getErrandSenderFalse);

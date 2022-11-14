@@ -20,7 +20,7 @@ exports.postErrandsend = async (req, res) => {
             result: ErrandSend
         });
    }catch(error){
-    console.log(error);
+    // console.log(error);
         res.status(400).json({
             message: 'Error Saving Errand Sender Details',
             error: error
