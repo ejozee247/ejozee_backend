@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const mongooseConnect = require('./utils/database');
 const multer = require('multer');
-require('dotenv').config();
+require('dotenv').config({ path: ".env" });
 const corsOptions = {
     origin : '*',
     credentials:true,
